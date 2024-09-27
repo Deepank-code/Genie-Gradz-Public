@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import user from "../assets/images/users/user-1.jpg";
 import { Accordion } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -50,7 +50,10 @@ const SideBarMenu = () => {
                         Nowak Helme
                       </Link>
                       <div className="dropdown-menu user-pro-dropdown">
-                        <Link to="#" className="dropdown-item notify-item">
+                        <Link
+                          to="/profile"
+                          className="dropdown-item notify-item"
+                        >
                           <i className="fe-user me-1"></i>
                           <span>My Account</span>
                         </Link>
@@ -65,7 +68,7 @@ const SideBarMenu = () => {
                           <span>Lock Screen</span>
                         </Link>
 
-                        <Link to="#" className="dropdown-item notify-item">
+                        <Link to="/login" className="dropdown-item notify-item">
                           <i className="fe-log-out me-1"></i>
                           <span>Logout</span>
                         </Link>
@@ -103,11 +106,30 @@ const SideBarMenu = () => {
                       </li>
 
                       <li className="menu-title mt-2">Apps</li>
+                      <li>
+                        <Link to="/notes">
+                          <i className="mdi mdi-forum-outline"></i>
+                          <span> Notes </span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/scheduleclass">
+                          <Icon icon="carbon:event-schedule" />
+                          <span> Schedule Class </span>
+                        </Link>
+                      </li>
 
                       <li>
                         <Link to="/certificates">
                           <Icon icon="fluent:certificate-24-regular" />
                           <span> Certificates </span>
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/jitsi">
+                          <i className="mdi mdi-briefcase-variant-outline"></i>
+                          <span> Meeting </span>
                         </Link>
                       </li>
                       <li>
@@ -116,11 +138,10 @@ const SideBarMenu = () => {
                           <span> Calendar </span>
                         </Link>
                       </li>
-
                       <li>
-                        <Link to="/notes">
-                          <i className="mdi mdi-forum-outline"></i>
-                          <span> Notes </span>
+                        <Link to="/conceptual-test">
+                          <Icon icon="healthicons:i-exam-multiple-choice" />
+                          <span> Conceptual Test </span>
                         </Link>
                       </li>
                       <Accordion flush>
@@ -169,13 +190,6 @@ const SideBarMenu = () => {
                           </Accordion.Body>
                         </Accordion.Item>
                       </Accordion>
-
-                      <li>
-                        <Link to="/project">
-                          <i className="mdi mdi-briefcase-variant-outline"></i>
-                          <span> Projects </span>
-                        </Link>
-                      </li>
 
                       <Accordion flush>
                         <Accordion.Item

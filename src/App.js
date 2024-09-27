@@ -28,6 +28,7 @@ import jwtDecode from "jwt-decode";
 import { getAuthTokenFromLocalStorage } from "./helpers/utils";
 import { authenticateUser } from "./actions/auth";
 import { connect } from "react-redux";
+import ConceptualTest from "./components/ConceptualTest";
 import {
   BrowserRouter as Router,
   Route,
@@ -36,7 +37,8 @@ import {
 } from "react-router-dom";
 
 import React, { Component } from "react";
-
+import ScheduleClass from "./components/ScheduleClass";
+import JitsiComponent from "./components/JitsiComponent";
 const PrivateRoute = (privateRouteProps) => {
   const { isLoggedIn, path, component: Component } = privateRouteProps;
   return (
@@ -93,8 +95,11 @@ class App extends Component {
             <Route component={LockScreen} path="/lockscreen" />
             <Route component={ConfirmMail} path="/confirmmail" />
             <Route component={Certificates} path="/certificates" />
-            <Route component={TutorDashboard} path="/tutor/dashboard" />
+            <Route component={ScheduleClass} path="/scheduleclass" />
             <Route component={TutorNotes} path="/tutor/notes" />
+            <Route component={TutorDashboard} path="/tutor/dashboard" />
+            <Route component={ConceptualTest} path="/conceptual-test" />
+            <Route component={JitsiComponent} path="/jitsi" />
 
             <PrivateRoute
               component={UserProfile}
